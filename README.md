@@ -1,1 +1,1 @@
-# fcc-health-costs
+# Linear Regression Health Costs Calculator (WIP)
