@@ -1,1 +1,29 @@
-# Code!
+# Some of the given code may have been changed for use outside of a notebook environment
+
+# Cell 1 (given)
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+import tensorflow_docs as tfdocs
+import tensorflow_docs.plots
+import tensorflow_docs.modeling
+import requests
+import os
+
+# Cell 2 (given)
+url = "https://cdn.freecodecamp.org/project-data/health-costs/insurance.csv"
+filename = "insurance.csv"
+
+if not os.path.exists(filename):
+    response = requests.get(url)
+    with open(filename, "wb") as f:
+        f.write(response.content)
+    print(f"Downloaded '{filename}'")
+else:
+    print(f"'{filename}' already exists. Skipping download.")
+
+dataset = pd.read_csv(filename)
+print(dataset.tail())
